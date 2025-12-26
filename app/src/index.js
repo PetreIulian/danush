@@ -8,14 +8,15 @@ import Program from './Components/Program/Program';
 import Header from './Components/Header/Header';
 import Nav from './Components/Nav-Log/nav-log';
 import Auth from './Components/Auth/auth';
+import { BrowserRouter } from 'react-router-dom';
 
 export {Navbar, Program, Header, Nav, Auth};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App />
-  </React.StrictMode>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function
