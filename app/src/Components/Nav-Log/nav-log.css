@@ -1,0 +1,28 @@
+.nav-log {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--ice-white);
+    width: 100%;
+    height: 64px;
+    border-bottom: 0.25px solid var(--black);
+}
+
+.logo_container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    justify-content: space-between;
+}
+
+#LogoCC {
+    margin-left: 3em;
+    height: 36.37px;
+    width: auto;
+}
+
+#LogoOSFIIR {
+    margin-right: 3em;
+    height: 64.16px;
+    width: auto;
+}

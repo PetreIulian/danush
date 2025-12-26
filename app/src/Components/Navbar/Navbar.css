@@ -1,0 +1,72 @@
+.navbarcontainer {
+    background-color: #1b263b;
+    padding: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    gap: auto;
+}   
+
+.logocontainer {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 0px 10px;
+}   
+
+.logoCadCraft img {
+    height: 3rem;
+    width: auto;
+}
+
+.logoOSFIIR img {
+    height: 3rem;
+    width: auto;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a:hover {
+    background-color: #4a5568;
+    border-radius: 5px;
+    padding: 20px 5px;
+}
+
+.menu {
+    display: none;
+}
+
+.span {
+    height: 5px;
+    width: 100%;
+    background-color: #EBF2FA;
+    border-radius: 5px;
+    z-index: 999;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .user-profile {
+        display: none;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+        padding: 10px;
+    }
+}

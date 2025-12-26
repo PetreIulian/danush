@@ -1,0 +1,23 @@
+:root {
+    --black: #1D1D1D;
+    --green: #208A39;
+    --yellow: #FFC300;
+    --blue: #003566;
+    --ice-white: #EBF2FA;
+    --cherry-red: #E63946;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: "Inter", sans-serifs;
+}
