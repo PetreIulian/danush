@@ -29,11 +29,12 @@ const Auth = () => {
           <h1>Autentificare</h1>
           <span className="line"></span>
           <h2>Conectează-te pentru a accesa dashboardul evenimentului</h2>
-
-          <button onClick={handleGoogleSignIn}>
+          <button className="log-button" onClick={handleGoogleSignIn}>
             <img className="GoogleLogo" src={GoogleLogo} alt="GoogleLogo" />
             Conectează-te
           </button>
+          <span className="line"></span>
+          <button className="reg-button">Înregistrare</button>
         </div>
       </div>
     </section>

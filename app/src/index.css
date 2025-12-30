@@ -1,7 +1,8 @@
 :root {
     --black: #1D1D1D;
     --green: #208A39;
-    --yellow: #FFC300;
+    --yellow: #ffc300;
+    --yellow-transparent: hsla(46, 100%, 50%, 0.75);
     --blue: #003566;
     --ice-white: #EBF2FA;
     --cherry-red: #E63946;
@@ -19,5 +20,23 @@
 
 body{
     margin: 0;
+    font-family: "Inter", sans-serifs;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+button{
+    cursor: pointer;
+    font-family: "Inter", sans-serifs;
+}
+
+ul{
+    list-style: none;
+}
+
+input{
     font-family: "Inter", sans-serifs;
 }
