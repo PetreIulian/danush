@@ -4,13 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './Components/Navbar/Navbar';
-import Program from './Components/Program/Program';
+import Timer from './Components/Timer/Timer';
 import Header from './Components/Header/Header';
 import Nav from './Components/Nav-Log/nav-log';
 import Auth from './Components/Auth/auth';
 import { BrowserRouter } from 'react-router-dom';
 
-export {Navbar, Program, Header, Nav, Auth};
+export {Navbar, Timer, Header, Nav, Auth};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

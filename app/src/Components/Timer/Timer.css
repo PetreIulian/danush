@@ -1,0 +1,35 @@
+.timer {
+  font-family: 'Arial', sans-serif;
+  font-size: 2rem;  
+  color: white;
+  font-weight: 700;
+  border-radius: 10px;
+  background-color: var(--black);
+  padding: 10px 20px;
+  width: fit-content;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}  
+
+.timer-container {
+  padding: 1em;  
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 2em;
+  background-color: var(--ice-white);  
+  width: fit-content;
+  border-radius: 1em;
+  padding: 1.5em;
+  align-items: center;
+  border: 1px solid rgba(0,0,0,0.15);
+  position: relative;
+  top: 246px;
+  left: 96px;
+}   
+
+.timer-container p {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--blue);
+  margin: 0;
+}
