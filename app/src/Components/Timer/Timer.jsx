@@ -2,7 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Timer.css";
 
 function Timer({ duration, start }) {
-  const [time, setTime] = useState(duration);
+  const [time, setTime] = useState(() => {
+    const saved = localStorage.getItem("timer");
+    return saved ? Number(saved) : duration;
+  });
+
   const intervalRef = useRef(null);
 
   useEffect(() => {
@@ -11,9 +15,12 @@ function Timer({ duration, start }) {
         setTime((prev) => {
           if (prev <= 1000) {
             clearInterval(intervalRef.current);
+            localStorage.removeItem("timer");
             return 0;
           }
-          return prev - 1000;
+          const newTime = prev - 1000;
+          localStorage.setItem("timer", newTime);
+          return newTime;
         });
       }, 1000);
     } else {
@@ -35,8 +42,8 @@ function Timer({ duration, start }) {
 
   return (
     <section className="timer-container">
-        <p>Etapa de lucru se sfârșește în:</p>
-        <div className="timer">{formatTime(time)}</div>
+      <p>Etapa de lucru se sfârșește în:</p>
+      <div className="timer">{formatTime(time)}</div>
     </section>
   );
 }

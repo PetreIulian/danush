@@ -1,11 +1,11 @@
 import React from "react"
-import "./Header.css"
+import "./Printer.css"
 
-function Header() {
+function Printer() {
     return (
         <header>
         </header>
     )
 }
 
-export default Header
+export default Printer
