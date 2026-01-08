@@ -8,8 +8,8 @@ const Nav = () => {
   return (
      <section className="nav-log">
         <div className="logo_container">
-          <img id="LogoCC" src={LogoCC} alt="LogoCC" />
-          <img id="LogoOSFIIR" src={LogoOSFIIR} alt="LogoOSFIIR" />
+          <a href="https://cadathon.osfiir.ro"><img id="LogoCC" src={LogoCC} alt="LogoCC" /></a>
+          <a href="https://osfiir.ro"><img id="LogoOSFIIR" src={LogoOSFIIR} alt="LogoOSFIIR" /></a>
         </div>
      </section>         
     );
