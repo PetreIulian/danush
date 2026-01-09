@@ -1,0 +1,35 @@
+.status-label {
+    height: 25px;
+    width: 25px;
+    background-color: green;
+    border-radius: 20px;
+    display: flex;
+}
+
+.title-text {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.status-text {
+    font-size: 16px;
+    margin-right: 5px;
+    font-weight: 500;
+}
+
+.status-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 2em; 
+}
+
+.container {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+}

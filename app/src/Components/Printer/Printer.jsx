@@ -3,8 +3,13 @@ import "./Printer.css"
 
 function Printer() {
     return (
-        <header>
-        </header>
+        <div className="container">
+            <h1 className="title-text">Imprimanta 1</h1>
+            <div className="status-container">
+                <h2 className="status-text">Status: </h2>
+                <span className="status-label"></span>
+            </div>
+        </div>
     )
 }
 

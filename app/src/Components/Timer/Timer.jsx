@@ -1,44 +1,49 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 import "./Timer.css";
 
-function Timer({ duration, start }) {
-  const [time, setTime] = useState(() => {
-    const saved = localStorage.getItem("timer");
-    return saved ? Number(saved) : duration;
-  });
+const formatTime = (time) => {
+  const hours = Math.floor(time / (1000 * 60 * 60));
+  const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((time % (1000 * 60)) / 1000);
 
-  const intervalRef = useRef(null);
+  return `${hours.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+};
+
+function Timer() {
+  const [time, setTime] = useState(0);
+  const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
-    if (start) {
-      intervalRef.current = setInterval(() => {
-        setTime((prev) => {
-          if (prev <= 1000) {
-            clearInterval(intervalRef.current);
-            localStorage.removeItem("timer");
-            return 0;
-          }
-          const newTime = prev - 1000;
-          localStorage.setItem("timer", newTime);
-          return newTime;
-        });
-      }, 1000);
-    } else {
-      clearInterval(intervalRef.current);
+    const startFlag = localStorage.getItem("timerStart");
+    let endTime = localStorage.getItem("timerEnd");
+
+    if (startFlag === "true" && endTime) {
+      endTime = Number(endTime);
+      setIsActive(true);
+      const remaining = Math.max(endTime - Date.now(), 0);
+      setTime(remaining);
     }
+  }, []);
 
-    return () => clearInterval(intervalRef.current);
-  }, [start]);
+  useEffect(() => {
+    if (!isActive || time <= 0) return;
 
-  const formatTime = (time) => {
-    const hours = Math.floor(time / (1000 * 60 * 60));
-    const minutes = Math.floor((time % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((time % (1000 * 60)) / 1000);
+    const interval = setInterval(() => {
+      setTime((prev) => {
+        const newTime = prev - 1000;
+        if (newTime <= 0) {
+          localStorage.setItem("timerStart", "false");
+          setIsActive(false);
+          return 0;
+        }
+        return newTime;
+      });
+    }, 1000);
 
-    return `${hours.toString().padStart(2, "0")}:${minutes
-      .toString()
-      .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
-  };
+    return () => clearInterval(interval);
+  }, [isActive, time]);
 
   return (
     <section className="timer-container">
