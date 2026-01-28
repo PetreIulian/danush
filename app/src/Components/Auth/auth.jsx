@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./auth.css";
 import GoogleLogo from "../../Assets/GoogleLogo.svg";
 import { UserAuth } from "../../Context/AuthContext";
-import RegisterModal from "../../Components/RegisterForm/RegisterForm";
+import RegisterForm from "../../Components/RegisterForm/RegisterForm";
 
 const Auth = () => {
   const { googleSignIn, user } = UserAuth();
@@ -49,7 +49,7 @@ const Auth = () => {
       </div>
 
       {showRegister && (
-        <RegisterModal onClose={() => setShowRegister(false)} />
+        <RegisterForm onClose={() => setShowRegister(false)} />
       )}
     </section>
   );

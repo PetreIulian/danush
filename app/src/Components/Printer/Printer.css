@@ -59,3 +59,13 @@ margin: 0;
 .printer-container.error .status-dot {
   background-color: #EF6C00;
 }
+
+.printer-container {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.printer-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}

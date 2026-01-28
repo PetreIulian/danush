@@ -1,6 +1,8 @@
+import { useState } from "react";
 import NavbarGreen from "../Components/Navbar-Green/NavbarGreen";
 import Timer from "../Components/Timer/Timer";
 import Printer from "../Components/Printer/Printer";
+import PrinterForm from "../Components/PrinterForm/PrinterForm";
 import Left from "../Assets/left.png";
 import Right from "../Assets/right.png";
 import "./Dashboard.css";
@@ -15,15 +17,7 @@ const Dashboard = () => {
     { id: 6, status: "busy" },
   ];
 
-  /*
-  const [printers, setPrinters] = useState([]);
-
-  useEffect(() => {
-  fetch("/api/printers")
-    .then(res => res.json())
-    .then(data => setPrinters(data));
-  }, []);
-  */
+  const [selectedPrinter, setSelectedPrinter] = useState(null);
 
   return (
     <section className="section_dashboard">
@@ -43,11 +37,19 @@ const Dashboard = () => {
                 key={printer.id}
                 number={printer.id}
                 status={printer.status}
+                onClick={() => setSelectedPrinter(printer)}
               />
             ))}
           </div>
         </div>
       </div>
+
+      {selectedPrinter && (
+        <PrinterForm
+          printer={selectedPrinter}
+          onClose={() => setSelectedPrinter(null)}
+        />
+      )}
     </section>
   );
 };
