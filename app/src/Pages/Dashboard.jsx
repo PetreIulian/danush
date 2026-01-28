@@ -17,6 +17,17 @@ const Dashboard = () => {
     { id: 6, status: "busy" },
   ];
 
+  /*
+  const [printers, setPrinters] = useState([]);
+
+  useEffect(() => {
+  fetch("/api/printers")
+    .then(res => res.json())
+    .then(data => setPrinters(data));
+  }, []);
+  */
+
+
   const [selectedPrinter, setSelectedPrinter] = useState(null);
 
   return (
