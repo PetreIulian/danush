@@ -47,7 +47,6 @@ function Timer() {
 
   return (
     <section className="timer-container">
-      <p>Etapa de lucru se sfârșește în:</p>
       <div className="timer">{formatTime(time)}</div>
     </section>
   );

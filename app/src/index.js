@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Navbar from './Components/Navbar/Navbar';
+import NavbarGreen from './Components/Navbar-Green/NavbarGreen';
 import Timer from './Components/Timer/Timer';
 import Printer from './Components/Printer/Printer';
 import Nav from './Components/Nav-Log/nav-log';
 import Auth from './Components/Auth/auth';
 import { BrowserRouter } from 'react-router-dom';
 
-export {Navbar, Timer, Printer, Nav, Auth};
+export {NavbarGreen, Timer, Printer, Nav, Auth};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

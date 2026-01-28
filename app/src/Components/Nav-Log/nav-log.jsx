@@ -1,6 +1,6 @@
 import React from "react";
 import "./nav-log.css";
-import LogoCC from "../../Assets/LogoCC.svg";
+import LogoCC from "../../Assets/LogoCCBlack.svg";
 import LogoOSFIIR from "../../Assets/LogoOSFIIR.svg";
   
 

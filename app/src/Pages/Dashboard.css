@@ -1,68 +1,77 @@
-* {
+.section_dashboard {
+    background: var(--ice-white);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 24px;
+    min-height: 100vh;
     box-sizing: border-box;
 }
 
-.dashboard-content {
+.dashboard-container {
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    background-color: var(--green);
+    background-image: url("../Assets/Pattern.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+}
+
+.timer_container {
+    width: 100%;
+    max-width: 616px;
     display: flex;
+    margin: 20px auto;
+    justify-content: center;
     align-items: center;
-    gap: 32px;
-    padding: 24px 32px;
-    background-color: #f5f7fa;
-    min-height: calc(100vh - 70px);
+    gap: clamp(30px, 10vw, 5rem);;
+    padding: 20px 1rem;
+    box-sizing: border-box;
 }
 
-.timer-container {
-    width: 340px;
-    background: var(--ice-white);
-    border-radius: 14px;
-    padding: 20px 22px;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-    height: fit-content;
+.timer_container img {
+    width: clamp(60px, 10vw, 143.03px);
+    height: auto;
+    flex-shrink: 0;
+    flex-wrap: nowrap;
+}    
+
+@media (max-width: 768px) {
+    .timer_container {
+    gap: 1rem;
+    }
+
+    .timer_container img {
+    max-width: 90px;    
+    }
 }
 
-.timer-container * {
-    text-align: center;
+@media (max-width: 420px) {
+    .timer_container img {
+    display: none;
+    }
 }
 
-.printer-container {
-    flex: 1;
+.printers {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 28px;
-    align-items: start;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    justify-items: center;
+    padding-bottom: 4rem;
+    padding-top: 2rem;
 }
 
-.printer-container > * {
-    background: #f1f1f1;
-    border-radius: 14px;
-    padding: 18px 20px;
-    min-height: 160px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+@media (max-width: 768px) {
+  .printers {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.printer-container > *:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
-}
-
-@media (max-width: 1024px) {
-    .dashboard-content {
-        align-items: flex-start;
-    }
-
-    .timer-container {
-        width: 300px;
-    }
-}
-
-@media (max-width: 900px) {
-    .dashboard-content {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .timer-container {
-        width: 100%;
-    }
+@media (max-width: 480px) {
+  .printers {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,0 +1,36 @@
+.section_about {
+    background: var(--ice-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 24px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.about-container {
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    background-color: var(--yellow);
+    background-image: url("../Assets/Pattern.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 30px;
+}
+
+.PrintersInfo {
+    margin-top: 10rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    margin-bottom: 10rem;
+}
+
+@media (max-width: 840px) {
+  .PrintersInfo {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10rem;
+  }
+}
